@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Прокладываем маршрут с помощью Google Maps API</title>
+		<link rel="stylesheet" href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css">
+		
+		<style>
+			body { font: normal 14px Arial, Helvetica, sans-serif }
+			label { font-size: .8em; color: #777 }
+			input[type=text] { width: 200px; padding: 5px; border: 1px solid #ccc; }
+		</style>
+		
+		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="gmaps.js"></script>
+	</head>
+	
+	<body onload="initialize()">
+		<div id="map_canvas" style="float:left;width:70%;height:100%;"></div>
+		
+		<div id="control_panel" style="float:right;width:30%;text-align:left;padding-top:20px">
+				
+			<div style="margin:20px;border-width:2px;">
+				<form>
+					<input type="text" id="start" value="" placeholder="Start" required>
+					<br>
+					<input type="text" id="end" value="" placeholder="End" required>
+					<br>
+					
+					<input type="text" id="waypts" value="" placeholder="Waypoints (separated using ';')">
+					<br>
+					<input type="button" onclick="calcRoute();" value="Route";>
+				</form>
+			</div>
+			
+			<div id="directions_panel" style="margin:20px;background-color:#eee; padding: 10px;"></div>
+		</div>
+	</body>
+</html>
