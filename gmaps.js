@@ -21,7 +21,7 @@ function initialize() {
 		center: map_center
 	}
 	
-	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
 	directionsDisplay.setMap(map);
 }
 
@@ -97,7 +97,7 @@ function checkArgs() {
 		if (status == google.maps.DirectionsStatus.OK) {
 			directionsDisplay.setDirections(response);
 			var route = response.routes[0];
-			var summaryPanel = document.getElementById("directions_panel");
+			var summaryPanel = document.getElementById("directions-panel");
 			summaryPanel.innerHTML = "";
 			totalDistance = 0;
 			
@@ -116,9 +116,4 @@ function checkArgs() {
 			summaryPanel.innerHTML += 'Total distance: ' + totalDistance + ' km<br>';
 		}
 	});
-}
-
-function getTarrif() {
-	var t = 300;
-	return t;
 }
